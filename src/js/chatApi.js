@@ -81,7 +81,7 @@ export default class ChatApi {
   }
 
   wsStart() {
-    const ws = new WebSocket("ws://localhost:7070/ws");
+    const ws = new WebSocket("wss://chatserverrus.onrender.com/ws");
 
     document.addEventListener("keydown", (e) => {
       if (e.code == "Enter") {

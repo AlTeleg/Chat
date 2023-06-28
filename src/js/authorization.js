@@ -1,4 +1,4 @@
-import ChatApi from "./chatApi";
+import User from "./user";
 
 export default class Authorization {
   constructor(apiUrl, chat) {
@@ -32,13 +32,16 @@ export default class Authorization {
     let nickname = e.target.previousElementSibling.value;
     if (nickname != "" || undefined) {
       console.log(this.apiUrl);
-      const request = fetch("https://chatserverrus.onrender.com/" + "authorization/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ nickname: nickname }),
-      });
+      const request = fetch(
+        "https://chatserverrus.onrender.com/" + "authorization/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ nickname: nickname }),
+        }
+      );
 
       const result = await request;
 
@@ -53,12 +56,7 @@ export default class Authorization {
       if (json.auth) {
         console.log("Welcome");
         const id = json.auth;
-        this.user = {
-          nickname: nickname,
-          id: id,
-          entered: Date.now(),
-        };
-        console.log(this.chat);
+        this.user = new User(nickname, id);
         this.chat.getUser(this.user);
         this.removeOutDOM();
         this.chat.addToDOM();
