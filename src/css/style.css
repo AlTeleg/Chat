@@ -1,0 +1,126 @@
+.right {
+    text-align: right;
+}
+
+.red {
+    color:red;
+}
+
+*::-webkit-scrollbar {
+    width: 0px;
+}
+
+.chat {
+    width: 70%;
+    height: 500px;
+    margin-left: 30%;
+    overflow-y:scroll;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 999;
+    border-width: 8px;
+    border-image: linear-gradient(black,rgb(88, 88, 88)) 30;
+    border-radius: 8px;
+    border-style: solid;
+    scrollbar-width: thin;
+}
+
+.chat_input {
+    margin: 10px;
+    width: 69%;
+    height: 30px;
+    position: fixed;
+    top:498px;
+    left: 29.73%;
+    border-color: rgb(88, 88, 88);
+    border-radius: 8px;
+    border-width: 3px;
+    z-index: 999;
+    border-top: none;
+}
+
+.chat_input:focus {
+    margin: 10px;
+    width: 69%;
+    height: 30px;
+    position: fixed;
+    top:498px;
+    left: 29.73%;
+    border-color: black;
+    border-radius: 8px;
+    border-width: 6px;
+    z-index: 999;
+}
+
+.users {
+    width: 30%;
+    padding: 30px;
+}
+
+.users-div {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    min-height: 300px;
+    border: 3px black solid;
+    border-radius: 8px;
+    border-bottom: none;
+    z-index: -1;
+    border-top-width: 8px;
+    border-left-width: 5px;
+}
+
+.users-div::after {
+    content: '';
+    position: absolute;
+    transform: scale(0.2959, 1);
+    left: -35.2%;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid black;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+
+
+.nickname-input-div {
+    margin: 200px auto;
+    width: 400px;
+    height: 200px;
+    border: 1px black solid;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.nickname-input-div_title {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.nickname-input-div_textarea {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 30px;
+    max-height: 30px;
+    margin: 30px 20px;
+}
+
+.nickname-input-div_button {
+    text-align: center;
+    width: 200px;
+    height: 50px;
+}
+
+.message-div {
+    padding: 5px;
+    margin: 10px 20px;
+}
+
+
+
