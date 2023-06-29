@@ -32,7 +32,7 @@ export default class Authorization {
   async onBtnClickAuth(e) {
     let nickname = e.target.previousElementSibling.value;
     if (nickname != "" || undefined) {
-      console.log('Authorization request sended!');
+      console.log('Authorization request was sent');
       const request = fetch(
         "http" + `${this.protocol}` + "://" + this.apiUrl + "/authorization/",
         {
