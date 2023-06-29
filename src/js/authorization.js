@@ -1,9 +1,10 @@
 import User from "./user";
 
 export default class Authorization {
-  constructor(apiUrl, chat) {
+  constructor(apiUrl, chat, protocol) {
     this.apiUrl = apiUrl;
     this.chat = chat;
+    this.protocol = protocol;
     this.onBtnClickAuth = this.onBtnClickAuth.bind(this);
     this.nicknameInputDiv = document.createElement("div");
     this.nicknameInputTitle = document.createElement("h3");
@@ -31,9 +32,9 @@ export default class Authorization {
   async onBtnClickAuth(e) {
     let nickname = e.target.previousElementSibling.value;
     if (nickname != "" || undefined) {
-      console.log(this.apiUrl);
+      console.log('Authorization request sended!');
       const request = fetch(
-        "http://" + this.apiUrl + "/authorization/",
+        "http" + `${this.protocol}` + "://" + this.apiUrl + "/authorization/",
         {
           method: "POST",
           headers: {

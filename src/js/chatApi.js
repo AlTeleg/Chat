@@ -1,8 +1,9 @@
 import Message from "./message";
 
 export default class ChatApi {
-  constructor(apiUrl) {
+  constructor(apiUrl, protocol) {
     this.apiUrl = apiUrl;
+    this.protocol = protocol;
     this.wsStart = this.wsStart.bind(this);
     this.getUser = this.getUser.bind(this);
     this.addUsers = this.addUsers.bind(this);
@@ -82,7 +83,7 @@ export default class ChatApi {
   }
 
   wsStart() {
-    const ws = new WebSocket('wss://' + this.apiUrl + '/ws');
+    const ws = new WebSocket('ws'+`${this.protocol}` + '://' + this.apiUrl + '/ws');
 
     document.addEventListener("keydown", (e) => {
       if (e.code == "Enter") {
