@@ -33,7 +33,7 @@ export default class Authorization {
     if (nickname != "" || undefined) {
       console.log(this.apiUrl);
       const request = fetch(
-        "https://chatserverrus.onrender.com/" + "authorization/",
+        "http://" + this.apiUrl + "/authorization/",
         {
           method: "POST",
           headers: {

@@ -1,7 +1,8 @@
 import Message from "./message";
 
 export default class ChatApi {
-  constructor() {
+  constructor(apiUrl) {
+    this.apiUrl = apiUrl;
     this.wsStart = this.wsStart.bind(this);
     this.getUser = this.getUser.bind(this);
     this.addUsers = this.addUsers.bind(this);
@@ -81,7 +82,7 @@ export default class ChatApi {
   }
 
   wsStart() {
-    const ws = new WebSocket("wss://chatserverrus.onrender.com/ws");
+    const ws = new WebSocket('wss://' + this.apiUrl + '/ws');
 
     document.addEventListener("keydown", (e) => {
       if (e.code == "Enter") {
